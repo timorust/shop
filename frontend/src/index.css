@@ -15,5 +15,7 @@
 .product-image {
 	max-width: 400px; /* Maximum width for the image */
 	width: 100%; /* Responsive width */
+	height: auto; /* Maintain aspect ratio */
 	border-radius: 8px; /* Rounded corners for the image */
+	object-fit: cover;
 }
