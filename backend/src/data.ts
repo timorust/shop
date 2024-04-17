@@ -11,7 +11,7 @@ export const sampleProducts: Product[] = [
 		countInStock: 10,
 		description:
 			'the strongest with clients are pieces she has designed for herself.',
-		rating: 5,
+		rating: 2,
 		numReviews: 10,
 	},
 	{
@@ -24,7 +24,7 @@ export const sampleProducts: Product[] = [
 		countInStock: 14,
 		description:
 			'We love the fresh and lively spirit the pieces bring to any look.',
-		rating: 4,
+		rating: 3,
 		numReviews: 9,
 	},
 	{
@@ -37,7 +37,7 @@ export const sampleProducts: Product[] = [
 		countInStock: 0,
 		description:
 			'We love the fresh and lively spirit the pieces bring to any look.',
-		rating: 8,
+		rating: 4,
 		numReviews: 2,
 	},
 	{
@@ -50,7 +50,7 @@ export const sampleProducts: Product[] = [
 		countInStock: 17,
 		description:
 			'We love the fresh and lively spirit the pieces bring to any look.',
-		rating: 7,
+		rating: 5,
 		numReviews: 3,
 	},
 ]
