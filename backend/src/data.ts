@@ -34,7 +34,7 @@ export const sampleProducts: Product[] = [
 		category: 'Necklace',
 		brand: 'Boochier',
 		price: 324500,
-		countInStock: 18,
+		countInStock: 0,
 		description:
 			'We love the fresh and lively spirit the pieces bring to any look.',
 		rating: 8,

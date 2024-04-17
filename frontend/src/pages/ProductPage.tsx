@@ -1,4 +1,4 @@
-import { Col, ListGroup, Row } from 'react-bootstrap'
+import { Badge, Button, Card, Col, ListGroup, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import LoadingBox from '../components/LoadingBox'
@@ -42,7 +42,40 @@ export default function ProductPage() {
 						</ListGroup.Item>
 					</ListGroup>
 				</Col>
-				<Col></Col>
+				<Col md={3}>
+					<Card>
+						<Card.Body>
+							<ListGroup variant='flush'>
+								<ListGroup.Item>
+									<Row>
+										<Col>Price:</Col>
+										<Col>${product.price}</Col>
+									</Row>
+								</ListGroup.Item>
+								<ListGroup.Item>
+									<Row>
+										<Col>Status:</Col>
+										<Col>
+											{product.countInStock > 0 ? (
+												<Badge bg='success'>In Stack</Badge>
+											) : (
+												<Badge bg='danger'>Unavailable</Badge>
+											)}
+										</Col>
+									</Row>
+								</ListGroup.Item>
+
+								{product.countInStock > 0 && (
+									<ListGroup.Item>
+										<div className='d-grid'>
+											<Button variant='success'>Add to card</Button>
+										</div>
+									</ListGroup.Item>
+								)}
+							</ListGroup>
+						</Card.Body>
+					</Card>
+				</Col>
 			</Row>
 		</div>
 	)
