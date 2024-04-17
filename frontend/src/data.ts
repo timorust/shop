@@ -53,4 +53,17 @@ export const sampleProducts: Product[] = [
 		rating: 7,
 		numReviews: 3,
 	},
+	{
+		name: 'Earrings Two Sided',
+		slug: 'earrings-two-sided',
+		image: '../images/earrings-two-sided.png',
+		category: 'Earrings',
+		brand: 'Cartier',
+		price: 5800,
+		countInStock: 17,
+		description:
+			'We love the fresh and lively spirit the pieces bring to any look.',
+		rating: 7,
+		numReviews: 3,
+	},
 ]
