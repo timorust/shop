@@ -23,3 +23,7 @@
 .rating span {
 	color: yellowgreen;
 }
+
+img.large {
+	max-width: 100%;
+}

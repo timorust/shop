@@ -14,6 +14,9 @@ app.use(
 app.get('/api/products', (reg: Request, res: Response) => {
 	res.json(sampleProducts)
 })
+app.get('/api/products/:slug', (reg: Request, res: Response) => {
+	res.json(sampleProducts.find(x => x.slug === reg.params.slug))
+})
 
 const PORT = 4000
 app.listen(PORT, () => {
