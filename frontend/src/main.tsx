@@ -1,3 +1,4 @@
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
@@ -7,16 +8,19 @@ import {
 	Route,
 	RouterProvider,
 } from 'react-router-dom'
-import App from './App.tsx'
+import App from './App'
 import './index.css'
 import HomePage from './pages/HomePage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 
+axios.defaults.baseURL =
+	process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : '/'
+
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
-			<Route index={true} element={<HomePage />}></Route>
-			<Route path='product/:slug' element={<ProductPage />}></Route>
+			<Route index={true} element={<HomePage />} />
+			<Route path='product/:slug' element={<ProductPage />} />
 		</Route>
 	)
 )
