@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom'
 import App from './App'
 import './index.css'
+import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 import { StoreProvider } from './Store.tsx'
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
 		<Route path='/' element={<App />}>
 			<Route index={true} element={<HomePage />} />
 			<Route path='product/:slug' element={<ProductPage />} />
+			<Route path='cart' element={<CartPage />} />
 		</Route>
 	)
 )
