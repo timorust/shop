@@ -12,6 +12,7 @@ export default function CartPage() {
 
 	const {
 		state: {
+			mode,
 			cart: { cartItems },
 		},
 		dispatch,
@@ -31,6 +32,10 @@ export default function CartPage() {
 
 	const checkoutHandler = () => {
 		navigate('/signin?redirect=/shipping')
+	}
+
+	const removeItemHandler = (item: CartItem) => {
+		dispatch({ type: 'CART_REMOVE_ITEM', payload: item })
 	}
 
 	return (
@@ -64,14 +69,14 @@ export default function CartPage() {
 												onClick={() =>
 													updateCartHandler(item, item.quantity - 1)
 												}
-												variant='light'
+												variant={mode}
 												disabled={item.quantity === 1}
 											>
 												<i className='fa fa-minus-circle'></i>
 											</Button>
 											<span>{item.quantity}</span>
 											<Button
-												variant='light'
+												variant={mode}
 												onClick={() =>
 													updateCartHandler(item, item.quantity + 1)
 												}
@@ -82,7 +87,10 @@ export default function CartPage() {
 										</Col>
 										<Col md={3}>{item.price}</Col>
 										<Col md={2}>
-											<Button variant='light'>
+											<Button
+												variant={mode}
+												onClick={() => removeItemHandler(item)}
+											>
 												<i className='fas fa-trash'></i>
 											</Button>
 										</Col>
