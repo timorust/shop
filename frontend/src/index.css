@@ -41,6 +41,6 @@ img.thumbnail {
 	color: #a0a0a0a0;
 }
 .checkout-steps > div.active {
-	border-bottom: 0.2rem solid #f08880;
-	color: #f08880;
+	border-bottom: 0.2rem solid #fb8500;
+	color: #fb8500;
 }
