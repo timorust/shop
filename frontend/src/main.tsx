@@ -16,6 +16,7 @@ import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 import SigninPage from './pages/SigninPage.tsx'
+import SignupPage from './pages/SignupPage.tsx'
 import { StoreProvider } from './Store.tsx'
 
 const queryClient = new QueryClient()
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
 			<Route path='product/:slug' element={<ProductPage />} />
 			<Route path='cart' element={<CartPage />} />
 			<Route path='signin' element={<SigninPage />} />
+			<Route path='signup' element={<SignupPage />} />
 		</Route>
 	)
 )
