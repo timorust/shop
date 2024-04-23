@@ -15,6 +15,7 @@ import './index.css'
 import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
+import ShippingAddressPage from './pages/ShippingAddressPage.tsx'
 import SigninPage from './pages/SigninPage.tsx'
 import SignupPage from './pages/SignupPage.tsx'
 import { StoreProvider } from './Store.tsx'
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
 			<Route path='cart' element={<CartPage />} />
 			<Route path='signin' element={<SigninPage />} />
 			<Route path='signup' element={<SignupPage />} />
+			<Route path='shipping' element={<ShippingAddressPage />} />
 		</Route>
 	)
 )
