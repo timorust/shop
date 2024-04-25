@@ -11,6 +11,7 @@ import {
 	RouterProvider,
 } from 'react-router-dom'
 import App from './App'
+import ProtectedRouter from './components/ProtectedRouter.tsx'
 import './index.css'
 import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
@@ -31,8 +32,11 @@ const router = createBrowserRouter(
 			<Route path='cart' element={<CartPage />} />
 			<Route path='signin' element={<SigninPage />} />
 			<Route path='signup' element={<SignupPage />} />
-			<Route path='shipping' element={<ShippingAddressPage />} />
-			<Route path='payment' element={<PaymentMethodPage />} />
+
+			<Route path='' element={<ProtectedRouter />}>
+				<Route path='shipping' element={<ShippingAddressPage />} />
+				<Route path='payment' element={<PaymentMethodPage />} />
+			</Route>
 		</Route>
 	)
 )
