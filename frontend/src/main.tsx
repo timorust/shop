@@ -16,11 +16,13 @@ import './index.css'
 import CartPage from './pages/CartPage.tsx'
 import HomePage from './pages/HomePage.tsx'
 import PaymentMethodPage from './pages/PaymentMethodPage.tsx'
+import PlaceOrderPage from './pages/PlaceOrderPage.tsx'
 import ProductPage from './pages/ProductPage.tsx'
 import ShippingAddressPage from './pages/ShippingAddressPage.tsx'
 import SigninPage from './pages/SigninPage.tsx'
 import SignupPage from './pages/SignupPage.tsx'
 import { StoreProvider } from './Store.tsx'
+import OrderPage from './pages/OrderPage.tsx'
 
 const queryClient = new QueryClient()
 
@@ -36,6 +38,8 @@ const router = createBrowserRouter(
 			<Route path='' element={<ProtectedRouter />}>
 				<Route path='shipping' element={<ShippingAddressPage />} />
 				<Route path='payment' element={<PaymentMethodPage />} />
+				<Route path='placeorder' element={<PlaceOrderPage />} />
+				<Route path='/order/:id' element={<OrderPage />} />
 			</Route>
 		</Route>
 	)
