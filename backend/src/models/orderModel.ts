@@ -39,6 +39,8 @@ class PaymentResult {
 	public status!: string
 	@prop()
 	public email_address!: string
+	@prop()
+	public update_time!: string
 }
 
 modelOptions({ schemaOptions: { timestamps: true } })
