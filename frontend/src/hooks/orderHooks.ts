@@ -58,3 +58,19 @@ export const useCreateOrderMutation = () => {
 		},
 	})
 }
+
+export const useGetOrderHistoryQuery = () => {
+	const { data, isLoading, isError } = useQuery({
+		queryKey: ['order-history'],
+		queryFn: async () => {
+			try {
+				const response = await apiClient.get<[Order]>(`/api/orders/mine`)
+				return response.data
+			} catch (error) {
+				throw new Error('Error fetching order history')
+			}
+		},
+	})
+
+	return { data, isLoading, isError }
+}

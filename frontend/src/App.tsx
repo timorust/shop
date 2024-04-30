@@ -7,8 +7,7 @@ import {
 	Navbar,
 	NavDropdown,
 } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom' // Import Link directly from react-router-dom
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Store } from './Store'
@@ -35,15 +34,16 @@ function App() {
 		localStorage.removeItem('paymentMethod')
 		window.location.href = '/signin'
 	}
+
 	return (
 		<div className='d-flex flex-column vh-100'>
 			<ToastContainer position='bottom-center' limit={1} />
 			<header>
 				<Navbar expand='lg'>
 					<Container>
-						<LinkContainer to='/'>
+						<Link to='/'>
 							<Navbar.Brand>EL Shope</Navbar.Brand>
-						</LinkContainer>
+						</Link>
 					</Container>
 					<Nav>
 						<Button variant={mode} onClick={switchModeHandler}>
@@ -59,11 +59,10 @@ function App() {
 						</Link>
 						{userInfo ? (
 							<NavDropdown id='basic-nav-dropdown' title={userInfo.name}>
-								<Link
-									className='dropdown-item'
-									to='#signout'
-									onClick={signoutHandler}
-								>
+								<Link to='/orderhistory' className='dropdown-item'>
+									Order History
+								</Link>
+								<Link to='#' className='dropdown-item' onClick={signoutHandler}>
 									Sign Out
 								</Link>
 							</NavDropdown>
