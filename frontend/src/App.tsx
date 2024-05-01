@@ -1,14 +1,14 @@
 import { useContext, useEffect } from 'react'
 import {
-	Badge,
 	Button,
 	Container,
+	FormControl,
+	InputGroup,
 	Nav,
 	Navbar,
-	NavbarCollapse,
 	NavDropdown,
 } from 'react-bootstrap'
-import { Link, Outlet } from 'react-router-dom' // Import Link directly from react-router-dom
+import { Form, Link, Outlet } from 'react-router-dom' // Import Link directly from react-router-dom
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { Store } from './Store'
@@ -51,6 +51,26 @@ function App() {
 						<LinkContainer to='/' className='header-link'>
 							<Navbar.Brand>EL Shope</Navbar.Brand>
 						</LinkContainer>
+
+						<Form className='flex-grow-1 d-flex me-auto'>
+							<InputGroup>
+								<FormControl
+									type='text'
+									name='q'
+									id='q'
+									placeholder='Search EL-Shop'
+									aria-label='Search EL-Shop'
+									aria-describedby='button-search'
+								></FormControl>
+								<Button
+									variant='outline-primary'
+									type='submit'
+									id='button-search'
+								>
+									<i className='fas fa-search'></i>
+								</Button>
+							</InputGroup>
+						</Form>
 						<Navbar.Collapse>
 							<Nav className='w-100 justify-content-end'>
 								<Link
